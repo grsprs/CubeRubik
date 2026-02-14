@@ -174,6 +174,12 @@ export class VisualCube {
    * (3d-addendum.md B3: projection integrity)
    */
   syncWithState(_state: CubeState): void {
+    // Reset all rotations to identity
+    this.cubeGroup.rotation.set(0, 0, 0);
+    this.cubies.forEach(cubie => {
+      cubie.mesh.rotation.set(0, 0, 0);
+    });
+    
     // TODO: Update cubie colors based on state
     // For now, cubies show initial solved colors
   }
