@@ -1,0 +1,32 @@
+# CODEOWNERS
+# This file defines code ownership for automatic review assignment
+
+# Default owner for everything
+* @grsprs
+
+# Domain layer (core logic)
+/src/domain/ @grsprs
+
+# Presentation layer (Three.js)
+/src/presentation/ @grsprs
+
+# Application layer (coordination)
+/src/application/ @grsprs
+
+# UI layer
+/src/ui/ @grsprs
+
+# Tests
+/tests/ @grsprs
+/src/**/*.test.ts @grsprs
+
+# Documentation
+/docs/ @grsprs
+*.md @grsprs
+
+# Configuration
+/.github/ @grsprs
+/package.json @grsprs
+/tsconfig.json @grsprs
+/vite.config.ts @grsprs
+/vitest.config.ts @grsprs
