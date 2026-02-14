@@ -135,17 +135,17 @@ export class ControlPanel {
     const resetBtn = document.getElementById('btn-reset');
     const undoBtn = document.getElementById('btn-undo');
 
-    scrambleBtn?.addEventListener('click', () => this.controller.scramble());
+    scrambleBtn?.addEventListener('click', async () => await this.controller.scramble());
     resetBtn?.addEventListener('click', () => this.controller.reset());
-    undoBtn?.addEventListener('click', () => this.controller.undo());
+    undoBtn?.addEventListener('click', async () => await this.controller.undo());
 
     // Move buttons
     const moveButtons = this.container.querySelectorAll('.btn-move');
     moveButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         const move = btn.getAttribute('data-move') as Move;
         if (move) {
-          this.controller.executeMove(move);
+          await this.controller.executeMove(move);
         }
       });
     });
