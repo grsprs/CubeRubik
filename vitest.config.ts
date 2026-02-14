@@ -5,19 +5,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html'],
-      exclude: [
-        'node_modules/',
-        'tests/',
-        '**/*.test.ts',
-        '**/*.config.ts',
-        'src/main.ts',
-        'src/ui/**',
-        'src/presentation/**',
-      ],
-    },
   },
   resolve: {
     alias: {
