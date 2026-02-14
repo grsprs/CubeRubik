@@ -1,6 +1,12 @@
 # CubeRubik
 
+[![CI](https://github.com/grsprs/CubeRubik/actions/workflows/ci.yml/badge.svg)](https://github.com/grsprs/CubeRubik/actions/workflows/ci.yml)
+[![Deploy](https://github.com/grsprs/CubeRubik/actions/workflows/deploy.yml/badge.svg)](https://github.com/grsprs/CubeRubik/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Educational 3D Rubik's Cube simulator with step-by-step tutorials.
+
+🎮 **[Live Demo](https://grsprs.github.io/CubeRubik/)**
 
 ## Features
 
