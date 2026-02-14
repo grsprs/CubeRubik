@@ -1,4 +1,4 @@
-import { Color, CubeState as ICubeState } from './types';
+import { CubeState as ICubeState } from './types';
 
 /**
  * Canonical cube state implementation

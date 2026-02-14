@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+#canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+#controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 350px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.control-panel h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #4CAF50;
+}
+
+.control-panel h4 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1rem;
+  color: #81C784;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #555;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #666;
+  transform: translateY(-2px);
+}
+
+.moves-section {
+  margin-top: 1rem;
+}
+
+.move-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.move-label {
+  width: 90px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.btn-move {
+  flex: 1;
+  padding: 0.5rem;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-move:hover {
+  background: #444;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.btn-move:active {
+  transform: scale(0.95);
+}
+
+.keyboard-info {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.shortcut-grid div {
+  background: #222;
+  padding: 0.4rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.shortcut-special {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.shortcut-special div {
+  flex: 1;
+  background: #222;
+  padding: 0.4rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+kbd {
+  background: #4CAF50;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+#controls::-webkit-scrollbar {
+  width: 8px;
+}
+
+#controls::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 4px;
+}
+
+#controls::-webkit-scrollbar-thumb {
+  background: #4CAF50;
+  border-radius: 4px;
+}

@@ -113,7 +113,7 @@ class Cubie {
    * Update sticker colors based on current position
    * CRITICAL: Position-based color derivation (3d-addendum.md C6a)
    */
-  updateColors(state: CubeState): void {
+  updateColors(_state: CubeState): void {
     // TODO: Implement position-based color lookup
     // For now, colors are set at creation
   }
@@ -173,7 +173,7 @@ export class VisualCube {
    * Sync visual with domain state
    * (3d-addendum.md B3: projection integrity)
    */
-  syncWithState(state: CubeState): void {
+  syncWithState(_state: CubeState): void {
     // TODO: Update cubie colors based on state
     // For now, cubies show initial solved colors
   }
