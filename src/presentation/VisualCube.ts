@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { CubeState } from '../domain/CubeState';
-import { Color, CubieId } from '../domain/types';
+import { Color, CubieId, Move } from '../domain/types';
 import { getMaterial, BLACK_MATERIAL } from './materials';
+import { AnimationEngine } from './AnimationEngine';
 
 /**
  * VisualCube - Three.js representation of Rubik's Cube
@@ -134,11 +135,13 @@ export class VisualCube {
   private readonly scene: THREE.Scene;
   private readonly cubies: Cubie[] = [];
   private readonly cubeGroup: THREE.Group;
+  private readonly animationEngine: AnimationEngine;
 
   constructor(scene: THREE.Scene) {
     this.scene = scene;
     this.cubeGroup = new THREE.Group();
     this.scene.add(this.cubeGroup);
+    this.animationEngine = new AnimationEngine();
 
     this.createCubies();
   }
@@ -173,6 +176,27 @@ export class VisualCube {
   syncWithState(state: CubeState): void {
     // TODO: Update cubie colors based on state
     // For now, cubies show initial solved colors
+  }
+
+  /**
+   * Animate a move
+   */
+  async animateMove(move: Move, duration: number = 300): Promise<void> {
+    await this.animationEngine.animateMove(this.cubeGroup, move, duration);
+  }
+
+  /**
+   * Check if animating
+   */
+  isAnimating(): boolean {
+    return this.animationEngine.isAnimating();
+  }
+
+  /**
+   * Update animations (call in animation loop)
+   */
+  update(deltaTime: number): void {
+    this.animationEngine.update(deltaTime);
   }
 
   /**

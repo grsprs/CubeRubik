@@ -61,11 +61,21 @@ window.addEventListener('resize', () => {
 });
 
 // Animation loop
+let lastTime = performance.now();
+
 function animate() {
   requestAnimationFrame(animate);
   
+  // Calculate delta time
+  const currentTime = performance.now();
+  const deltaTime = currentTime - lastTime;
+  lastTime = currentTime;
+  
   // Update camera controls
   cameraController.update();
+  
+  // Update animations
+  visualCube.update(deltaTime);
   
   renderer.render(scene, camera);
 }
@@ -76,3 +86,12 @@ animate();
 console.log('CubeRubik initialized');
 console.log('Domain layer ready:', state.isSolved());
 console.log('Visual cube created with 26 cubies');
+
+// Test animation (press R key)
+window.addEventListener('keydown', async (e) => {
+  if (e.key === 'r' && !visualCube.isAnimating()) {
+    console.log('Animating R move...');
+    await visualCube.animateMove('R');
+    console.log('Animation complete!');
+  }
+});
