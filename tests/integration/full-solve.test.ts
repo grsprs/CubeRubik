@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+/// <reference types="vitest" />
 import { CubeState } from '../../src/domain/CubeState';
 import { MoveEngine } from '../../src/domain/MoveEngine';
 

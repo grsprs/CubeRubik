@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+/// <reference types="vitest" />
 import { MoveEngine } from '../MoveEngine';
 import { CubeState } from '../CubeState';
 import type { Move } from '../types';

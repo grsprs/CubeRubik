@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+/// <reference types="vitest" />
 import { CubeState } from '../CubeState';
 
 describe('CubeState', () => {
