@@ -3,6 +3,7 @@ import { VisualCube } from './presentation/VisualCube';
 import { CameraController } from './presentation/CameraController';
 import { CubeController } from './application/CubeController';
 import { InputHandler } from './application/InputHandler';
+import { ControlPanel } from './ui/ControlPanel';
 
 /**
  * Main application entry point
@@ -52,6 +53,7 @@ const visualCube = new VisualCube(scene);
 // Create application layer
 const cubeController = new CubeController(visualCube);
 const inputHandler = new InputHandler(cubeController);
+const controlPanel = new ControlPanel(cubeController);
 
 // Create camera controller
 const cameraController = new CameraController(camera, canvas);
