@@ -4,7 +4,7 @@ import path from 'path';
 export default defineConfig({
   test: {
     globals: true,
-    environment: 'jsdom',
+    environment: 'node',
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
@@ -13,6 +13,9 @@ export default defineConfig({
         'tests/',
         '**/*.test.ts',
         '**/*.config.ts',
+        'src/main.ts',
+        'src/ui/**',
+        'src/presentation/**',
       ],
     },
   },
