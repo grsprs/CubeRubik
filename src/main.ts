@@ -1,7 +1,8 @@
 import * as THREE from 'three';
-import { CubeState } from './domain/CubeState';
 import { VisualCube } from './presentation/VisualCube';
 import { CameraController } from './presentation/CameraController';
+import { CubeController } from './application/CubeController';
+import { InputHandler } from './application/InputHandler';
 
 /**
  * Main application entry point
@@ -47,8 +48,10 @@ scene.add(directionalLight);
 
 // Create visual cube
 const visualCube = new VisualCube(scene);
-const state = CubeState.solved();
-visualCube.syncWithState(state);
+
+// Create application layer
+const cubeController = new CubeController(visualCube);
+const inputHandler = new InputHandler(cubeController);
 
 // Create camera controller
 const cameraController = new CameraController(camera, canvas);
@@ -84,14 +87,14 @@ animate();
 
 // Log initialization
 console.log('CubeRubik initialized');
-console.log('Domain layer ready:', state.isSolved());
+console.log('Domain layer ready:', cubeController.isSolved());
 console.log('Visual cube created with 26 cubies');
+console.log('\nKeyboard controls:');
+console.log('  R, U, F, D, L, B - Execute move');
+console.log('  Shift + key - Inverse move (e.g., Shift+R = R\')');
+console.log('  Space - Scramble');
+console.log('  Backspace - Undo');
+console.log('  Escape - Reset');
 
-// Test animation (press R key)
-window.addEventListener('keydown', async (e) => {
-  if (e.key === 'r' && !visualCube.isAnimating()) {
-    console.log('Animating R move...');
-    await visualCube.animateMove('R');
-    console.log('Animation complete!');
-  }
-});
+// Expose controller for debugging
+(window as any).cube = cubeController;
