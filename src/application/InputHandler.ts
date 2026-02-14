@@ -93,15 +93,16 @@ export class InputHandler {
         await this.controller.scramble();
         break;
 
-      case 'Backspace': // Undo
-        e.preventDefault();
-        await this.controller.undo();
-        break;
+      // Disabled until proper implementation
+      // case 'Backspace': // Undo
+      //   e.preventDefault();
+      //   await this.controller.undo();
+      //   break;
 
-      case 'Escape': // Reset
-        e.preventDefault();
-        this.controller.reset();
-        break;
+      // case 'Escape': // Reset
+      //   e.preventDefault();
+      //   this.controller.reset();
+      //   break;
     }
   }
 

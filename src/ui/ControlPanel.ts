@@ -29,8 +29,8 @@ export class ControlPanel {
         <!-- Main Actions -->
         <div class="button-group">
           <button id="btn-scramble" class="btn btn-primary">🎲 Scramble</button>
-          <button id="btn-reset" class="btn btn-secondary">🔄 Reset</button>
-          <button id="btn-undo" class="btn btn-secondary">↩️ Undo</button>
+          <!-- <button id="btn-reset" class="btn btn-secondary">🔄 Reset</button> -->
+          <!-- <button id="btn-undo" class="btn btn-secondary">↩️ Undo</button> -->
         </div>
 
         <!-- Face Moves -->
@@ -116,8 +116,8 @@ export class ControlPanel {
           </div>
           <div class="shortcut-special">
             <div><kbd>Space</kbd> Scramble</div>
-            <div><kbd>Backspace</kbd> Undo</div>
-            <div><kbd>Esc</kbd> Reset</div>
+            <!-- <div><kbd>Backspace</kbd> Undo</div> -->
+            <!-- <div><kbd>Esc</kbd> Reset</div> -->
           </div>
         </div>
       </div>
@@ -132,12 +132,12 @@ export class ControlPanel {
   private attachEventListeners(): void {
     // Main action buttons
     const scrambleBtn = document.getElementById('btn-scramble');
-    const resetBtn = document.getElementById('btn-reset');
-    const undoBtn = document.getElementById('btn-undo');
+    // const resetBtn = document.getElementById('btn-reset');
+    // const undoBtn = document.getElementById('btn-undo');
 
     scrambleBtn?.addEventListener('click', async () => await this.controller.scramble());
-    resetBtn?.addEventListener('click', () => this.controller.reset());
-    undoBtn?.addEventListener('click', async () => await this.controller.undo());
+    // resetBtn?.addEventListener('click', () => this.controller.reset());
+    // undoBtn?.addEventListener('click', async () => await this.controller.undo());
 
     // Move buttons
     const moveButtons = this.container.querySelectorAll('.btn-move');
